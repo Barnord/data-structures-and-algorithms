@@ -1,3 +1,3 @@
-![](array-reverse.jpg)
+![](array-instert.jpg)
 
 [<==Back](../README.md)
