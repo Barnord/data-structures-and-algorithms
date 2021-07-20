@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CodeChallenges/1.0.0": {
+        "dependencies": {
+          "DataStructures": "1.0.0"
+        },
+        "runtime": {
+          "CodeChallenges.dll": {}
+        }
+      },
+      "DataStructures/1.0.0": {
+        "runtime": {
+          "DataStructures.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CodeChallenges/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataStructures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
