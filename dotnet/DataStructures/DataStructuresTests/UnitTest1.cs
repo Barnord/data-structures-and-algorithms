@@ -150,4 +150,22 @@ namespace DataStructuresTests
         Assert.True(isPresent);
     }
     }
+
+  public class Kth
+  {
+    [Fact]
+    public void Test6()
+    {
+      bool isPresent = false;
+      LinkedList list = new LinkedList();
+      list.Append(3);
+      list.Append(6);
+      list.Append(9);
+      list.Append(12);
+      list.Append(15);
+      list.Append(18);
+
+      Assert.Equal(12, list.Kth(2));
+    }
+  }
 }

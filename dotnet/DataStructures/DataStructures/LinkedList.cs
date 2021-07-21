@@ -83,5 +83,26 @@ namespace DataStructures
       node.Next = current.Next;
       current.Next = node;
     }
+
+    public int Kth(int k)
+    {
+      Node current = Head;
+      int length = 0;
+
+      while (current.Next != null)
+      {
+        current = current.Next;
+        length++;
+      }
+
+      current = Head;
+
+      for (int i=0; i<length-k; i++)
+      {
+        current = current.Next;
+      }
+
+      return current.Value;
+    }
   }
 }
