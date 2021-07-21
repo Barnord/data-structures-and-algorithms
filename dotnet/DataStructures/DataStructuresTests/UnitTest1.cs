@@ -154,9 +154,61 @@ namespace DataStructuresTests
   public class Kth
   {
     [Fact]
-    public void Test6()
+    public void ListOne()
     {
-      bool isPresent = false;
+      LinkedList list = new LinkedList();
+      list.Append(3);
+
+      Assert.Equal(3, list.Kth(0));
+    }
+
+    [Fact]
+
+    public void KNegative()
+    {
+      LinkedList list = new LinkedList();
+      list.Append(3);
+      list.Append(6);
+      list.Append(9);
+      list.Append(12);
+      list.Append(15);
+      list.Append(18);
+
+      Assert.Throws<IndexOutOfRangeException>(() => list.Kth(-1));
+    }
+
+    [Fact]
+
+    public void KGreaterThanLength()
+    {
+      LinkedList list = new LinkedList();
+      list.Append(3);
+      list.Append(6);
+      list.Append(9);
+      list.Append(12);
+      list.Append(15);
+      list.Append(18);
+
+      Assert.Throws<IndexOutOfRangeException>(() => list.Kth(8));
+    }
+
+    [Fact]
+
+    public void KEqualsLength()
+    {
+      LinkedList list = new LinkedList();
+      list.Append(3);
+      list.Append(6);
+      list.Append(9);
+      list.Append(12);
+      list.Append(15);
+      list.Append(18);
+
+      Assert.Throws<IndexOutOfRangeException>(() => list.Kth(6));
+    }
+
+    public void KHappy()
+    {
       LinkedList list = new LinkedList();
       list.Append(3);
       list.Append(6);

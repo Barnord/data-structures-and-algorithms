@@ -94,6 +94,10 @@ namespace DataStructures
         current = current.Next;
         length++;
       }
+      if (k<0 || k>length)
+      {
+        throw new IndexOutOfRangeException();
+      }
 
       current = Head;
 
