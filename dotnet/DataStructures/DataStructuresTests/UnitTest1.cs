@@ -207,6 +207,8 @@ namespace DataStructuresTests
       Assert.Throws<IndexOutOfRangeException>(() => list.Kth(6));
     }
 
+    [Fact]
+
     public void KHappy()
     {
       LinkedList list = new LinkedList();
