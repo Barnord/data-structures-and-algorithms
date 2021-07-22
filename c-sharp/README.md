@@ -6,3 +6,4 @@
 - [Array Binary Search](./day3-array-binary-search/README.md)
 - [Linked List Insertions](./day6-linked-list-insertions/README.md)
 - [Linked List Kth](./day7-linked-list-kth/README.md)
+- [Linked List Zip](./day8-linked-list-zip/README.md)
