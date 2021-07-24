@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-  public class LinkedList
+  public class LinkedList<T>
   {
 
-    public Node Head { get; set; }
+    public Node<T> Head { get; set; }
 
     public LinkedList()
     {
 
     }
 
-    public void Insert(int value)
+    public void Insert(T value)
     {
-      Node node = new Node(value);
+      Node<T> node = new Node<T>(value);
       if (Head != null)
       {
         node.Next = Head;
@@ -26,16 +26,16 @@ namespace DataStructures
       Head = node;
     }
 
-    public void Append(int value)
+    public void Append(T value)
     {
-      Node node = new Node(value);
+      Node<T> node = new Node<T>(value);
       if (Head == null)
       {
         Head = node;
         return;
       }
 
-      Node current = Head;
+      Node<T> current = Head;
       while (current.Next != null)
       {
         current = current.Next;
@@ -44,11 +44,11 @@ namespace DataStructures
       current.Next = node;
     }
 
-    public void InsertBefore(int value, int before)
+    public void InsertBefore(T value, T before)
     {
-      Node node = new Node(value);
+      Node<T> node = new Node<T>(value);
 
-      Node current = Head;
+      Node<T> current = Head;
 
       if (Head.Value == before)
       {
@@ -70,11 +70,11 @@ namespace DataStructures
       }
     }
 
-    public void InsertAfter(int value, int after)
+    public void InsertAfter(T value, T after)
     {
-      Node node = new Node(value);
+      Node<T> node = new Node<T>(value);
 
-      Node current = Head;
+      Node<T> current = Head;
       while (current.Value != after)
       {
         current = current.Next;
@@ -84,9 +84,9 @@ namespace DataStructures
       current.Next = node;
     }
 
-    public int Kth(int k)
+    public int Kth(T k)
     {
-      Node current = Head;
+      Node<T> current = Head;
       int length = 0;
 
       while (current.Next != null)
