@@ -10,7 +10,7 @@ namespace DataStructuresTests
         public void Test1()
         {
         bool isPresent = false;
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -18,7 +18,7 @@ namespace DataStructuresTests
         list.Append(15);
         list.Append(18);
         list.InsertAfter(13, 12);
-        Node current = list.Head;
+        Node<int> current = list.Head;
         while (current.Value != 12)
         {
             current = current.Next;
@@ -36,7 +36,7 @@ namespace DataStructuresTests
         public void Test2()
         {
         bool isPresent = false;
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -44,7 +44,7 @@ namespace DataStructuresTests
         list.Append(15);
         list.Append(18);
         list.InsertBefore(11, 12);
-        Node current = list.Head;
+        Node<int> current = list.Head;
         while (current.Value != 11)
         {
             current = current.Next;
@@ -62,7 +62,7 @@ namespace DataStructuresTests
         public void Test3()
         {
         bool isPresent = false;
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -82,7 +82,7 @@ namespace DataStructuresTests
         [Fact]
         public void Test4()
         {
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -90,7 +90,7 @@ namespace DataStructuresTests
         list.Append(15);
         list.Append(18);
         list.Append(19);
-        Node current = list.Head;
+        Node<int> current = list.Head;
         while (current.Next != null)
         {
             current = current.Next;
@@ -104,7 +104,7 @@ namespace DataStructuresTests
         public void Test5()
         {
         bool isPresent = false;
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -112,7 +112,7 @@ namespace DataStructuresTests
         list.Append(15);
         list.Append(18);
         list.Append(20);
-        Node current = list.Head;
+        Node<int> current = list.Head;
         while (current.Value != 18)
         {
         current = current.Next;
@@ -130,7 +130,7 @@ namespace DataStructuresTests
     public void Test6()
     {
         bool isPresent = false;
-        LinkedList list = new LinkedList();
+        LinkedList<int> list = new LinkedList<int>();
         list.Append(3);
         list.Append(6);
         list.Append(9);
@@ -138,7 +138,7 @@ namespace DataStructuresTests
         list.Append(15);
         list.Append(18);
         list.InsertAfter(13, 18);
-        Node current = list.Head;
+        Node<int> current = list.Head;
         while (current.Value != 13)
         {
         current = current.Next;
@@ -156,7 +156,7 @@ namespace DataStructuresTests
     [Fact]
     public void ListOne()
     {
-      LinkedList list = new LinkedList();
+      LinkedList<int> list = new LinkedList<int>();
       list.Append(3);
 
       Assert.Equal(3, list.Kth(0));
@@ -166,7 +166,7 @@ namespace DataStructuresTests
 
     public void KNegative()
     {
-      LinkedList list = new LinkedList();
+      LinkedList<int> list = new LinkedList<int>();
       list.Append(3);
       list.Append(6);
       list.Append(9);
@@ -181,7 +181,7 @@ namespace DataStructuresTests
 
     public void KGreaterThanLength()
     {
-      LinkedList list = new LinkedList();
+      LinkedList<int> list = new LinkedList<int>();
       list.Append(3);
       list.Append(6);
       list.Append(9);
@@ -196,7 +196,7 @@ namespace DataStructuresTests
 
     public void KEqualsLength()
     {
-      LinkedList list = new LinkedList();
+      LinkedList<int> list = new LinkedList<int>();
       list.Append(3);
       list.Append(6);
       list.Append(9);
@@ -211,7 +211,7 @@ namespace DataStructuresTests
 
     public void KHappy()
     {
-      LinkedList list = new LinkedList();
+      LinkedList<int> list = new LinkedList<int>();
       list.Append(3);
       list.Append(6);
       list.Append(9);
@@ -220,6 +220,160 @@ namespace DataStructuresTests
       list.Append(18);
 
       Assert.Equal(12, list.Kth(2));
+    }
+  }
+
+  public class StackTests
+  {
+    [Fact]
+
+    public void APush()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+
+      Assert.Equal(1, stack.Peek());
+    }
+
+    [Fact]
+    public void BMultiplePush()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Peek());
+    }
+
+    [Fact]
+    public void CPopOff()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Pop());
+      Assert.Equal(2, stack.Peek());
+    }
+
+    [Fact]
+    public void DPopAll()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Pop());
+      Assert.Equal(2, stack.Pop());
+      Assert.Equal(1, stack.Pop());
+      Assert.Null(stack.Top);
+    }
+
+    [Fact]
+    public void EPeek()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+
+      Assert.Equal(1, stack.Peek());
+    }
+
+    [Fact]
+    public void FInstantiate()
+    {
+      Stack<int> stack = new Stack<int>();
+
+      Assert.True(stack.IsEmpty());
+    }
+
+    [Fact]
+    public void GException()
+    {
+      Stack<int> stack = new Stack<int>();
+
+      Assert.Throws<Exception>(() =>stack.Pop());
+    }
+  }
+
+  public class QueueTests
+  {
+    [Fact]
+    public void AEnqueue()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+
+      Assert.Equal(1, queue.Front.Value);
+    }
+
+    [Fact]
+    public void BEnqueueLots()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Front.Value);
+      Assert.Equal(3, queue.Back.Value);
+    }
+
+    [Fact]
+    public void CDequeue()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Dequeue());
+      Assert.Equal(2, queue.Front.Value);
+      Assert.Equal(3, queue.Back.Value);
+    }
+
+    [Fact]
+    public void DPeek()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Peek());
+    }
+
+    [Fact]
+    public void EDequeueEmpty()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      queue.Dequeue();
+      queue.Dequeue();
+      queue.Dequeue();
+
+      Assert.True(queue.IsEmpty());
+    }
+
+    [Fact]
+    public void FInstantiateEmpty()
+    {
+      Queue<int> queue = new Queue<int>();
+
+      Assert.True(queue.IsEmpty());
+    }
+
+    [Fact]
+    public void EEmptyException()
+    {
+      Queue<int> queue = new Queue<int>();
+
+      Assert.Throws<NullReferenceException>(() => queue.Dequeue());
     }
   }
 }
