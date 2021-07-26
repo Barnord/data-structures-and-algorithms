@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-  class Stack<T>
+  public class Stack<T>
   {
-    Node<T> Top { get; set; }
+    public Node<T> Top { get; set; }
 
     public Stack()
     {

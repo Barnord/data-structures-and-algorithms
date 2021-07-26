@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-  class Queue<T>
+  public class Queue<T>
   {
     public Node<T> Front { get; set; }
     public Node<T> Back { get; set; }
@@ -29,7 +29,34 @@ namespace DataStructures
 
     public T Dequeue()
     {
+      if (Front == null)
+      {
+        new Exception("Empty Queue.");
+      }
+      Node<T> node = Front;
+      Front = Front.Next;
 
+      return node.Value;
+    }
+
+    public T Peek()
+    {
+      if (Front == null)
+      {
+        new Exception("Empty Queue.");
+      }
+
+      return Front.Value;
+    }
+
+    public bool IsEmpty()
+    {
+      bool empty = false;
+      if (Front == null)
+      {
+        empty = true;
+      }
+      return empty;
     }
   }
 }

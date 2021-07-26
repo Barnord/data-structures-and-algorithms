@@ -44,9 +44,10 @@ namespace DataStructures
       current.Next = node;
     }
 
-    public void InsertBefore(T value, T before)
+    public void InsertBefore(T value, int before)
     {
       Node<T> node = new Node<T>(value);
+      Convert.ToInt32(node);
 
       Node<T> current = Head;
 
