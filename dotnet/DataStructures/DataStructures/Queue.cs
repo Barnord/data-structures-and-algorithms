@@ -23,7 +23,10 @@ namespace DataStructures
       {
         Front = node;
       }
+      else
+      {
       Back.Next = node;
+      }
       Back = node;
     }
 
@@ -31,7 +34,7 @@ namespace DataStructures
     {
       if (Front == null)
       {
-        new Exception("Empty Queue.");
+        new NullReferenceException("Empty Queue.");
       }
       Node<T> node = Front;
       Front = Front.Next;
@@ -43,7 +46,7 @@ namespace DataStructures
     {
       if (Front == null)
       {
-        new Exception("Empty Queue.");
+        new NullReferenceException("Empty Queue.");
       }
 
       return Front.Value;

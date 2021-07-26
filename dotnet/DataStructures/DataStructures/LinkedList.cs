@@ -51,20 +51,20 @@ namespace DataStructures
 
       Node<T> current = Head;
 
-      if (Head.Value == before)
+      if (Head.Value.Equals(before))
       {
         node.Next = Head;
         Head = node;
       }
       else
       {
-        while (current.Next.Value != before)
+        while (!current.Next.Value.Equals(before))
         {
           current = current.Next;
         }
       }
 
-      if (current.Next.Value == before)
+      if (current.Next.Value.Equals(before))
       {
         node.Next = current.Next;
         current.Next = node;
@@ -76,7 +76,7 @@ namespace DataStructures
       Node<T> node = new Node<T>(value);
 
       Node<T> current = Head;
-      while (current.Value != after)
+      while (!current.Value.Equals(after))
       {
         current = current.Next;
       }
@@ -85,7 +85,7 @@ namespace DataStructures
       current.Next = node;
     }
 
-    public int Kth(T k)
+    public T Kth(int k)
     {
       Node<T> current = Head;
       int length = 0;
@@ -95,14 +95,14 @@ namespace DataStructures
         current = current.Next;
         length++;
       }
-      if (k<0 || k>length)
+      if (k < 0 || k > length)
       {
         throw new IndexOutOfRangeException();
       }
 
       current = Head;
 
-      for (int i=0; i<length-k; i++)
+      for (int i = 0; i < length - k; i++)
       {
         current = current.Next;
       }

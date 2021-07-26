@@ -234,5 +234,146 @@ namespace DataStructuresTests
 
       Assert.Equal(1, stack.Peek());
     }
+
+    [Fact]
+    public void BMultiplePush()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Peek());
+    }
+
+    [Fact]
+    public void CPopOff()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Pop());
+      Assert.Equal(2, stack.Peek());
+    }
+
+    [Fact]
+    public void DPopAll()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+      stack.Push(2);
+      stack.Push(3);
+
+      Assert.Equal(3, stack.Pop());
+      Assert.Equal(2, stack.Pop());
+      Assert.Equal(1, stack.Pop());
+      Assert.Null(stack.Top);
+    }
+
+    [Fact]
+    public void EPeek()
+    {
+      Stack<int> stack = new Stack<int>();
+      stack.Push(1);
+
+      Assert.Equal(1, stack.Peek());
+    }
+
+    [Fact]
+    public void FInstantiate()
+    {
+      Stack<int> stack = new Stack<int>();
+
+      Assert.True(stack.IsEmpty());
+    }
+
+    [Fact]
+    public void GException()
+    {
+      Stack<int> stack = new Stack<int>();
+
+      Assert.Throws<Exception>(() =>stack.Pop());
+    }
+  }
+
+  public class QueueTests
+  {
+    [Fact]
+    public void AEnqueue()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+
+      Assert.Equal(1, queue.Front.Value);
+    }
+
+    [Fact]
+    public void BEnqueueLots()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Front.Value);
+      Assert.Equal(3, queue.Back.Value);
+    }
+
+    [Fact]
+    public void CDequeue()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Dequeue());
+      Assert.Equal(2, queue.Front.Value);
+      Assert.Equal(3, queue.Back.Value);
+    }
+
+    [Fact]
+    public void DPeek()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      Assert.Equal(1, queue.Peek());
+    }
+
+    [Fact]
+    public void EDequeueEmpty()
+    {
+      Queue<int> queue = new Queue<int>();
+      queue.Enqueue(1);
+      queue.Enqueue(2);
+      queue.Enqueue(3);
+
+      queue.Dequeue();
+      queue.Dequeue();
+      queue.Dequeue();
+
+      Assert.True(queue.IsEmpty());
+    }
+
+    [Fact]
+    public void FInstantiateEmpty()
+    {
+      Queue<int> queue = new Queue<int>();
+
+      Assert.True(queue.IsEmpty());
+    }
+
+    [Fact]
+    public void EEmptyException()
+    {
+      Queue<int> queue = new Queue<int>();
+
+      Assert.Throws<NullReferenceException>(() => queue.Dequeue());
+    }
   }
 }
