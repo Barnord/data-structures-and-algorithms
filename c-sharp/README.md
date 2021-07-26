@@ -7,3 +7,4 @@
 - [Linked List Insertions](./day6-linked-list-insertions/README.md)
 - [Linked List Kth](./day7-linked-list-kth/README.md)
 - [Linked List Zip](./day8-linked-list-zip/README.md)
+- [Pseudo Queue](./day11-pseudo-queue/README.md)
