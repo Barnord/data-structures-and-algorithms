@@ -3,26 +3,26 @@ using DataStructures;
 
 namespace CodeChallenges
 {
-    public class Program
+  public class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            
-        }
 
-    public static LinkedList LinkedZipper(LinkedList list1, LinkedList list2)
+    }
+
+    public static DataStructures.LinkedList<int> LinkedZipper(DataStructures.LinkedList<int> list1, DataStructures.LinkedList<int> list2)
     {
-      LinkedList zippedList = new LinkedList();
-      Node current1 = list1.Head;
-      Node current2 = list2.Head;
+      DataStructures.LinkedList<int> zippedList = new DataStructures.LinkedList<int>();
+      Node<int> current1 = list1.Head;
+      Node<int> current2 = list2.Head;
 
-      while (current1!=null || current2!=null)
+      while (current1 != null || current2 != null)
       {
-        if (current1!=null)
+        if (current1 != null)
         {
           zippedList.Append(current1.Value);
         }
-        if (current2!=null)
+        if (current2 != null)
         {
           zippedList.Append(current2.Value);
         }
@@ -32,5 +32,5 @@ namespace CodeChallenges
 
       return zippedList;
     }
-    }
+  }
 }
