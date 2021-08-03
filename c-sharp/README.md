@@ -9,3 +9,4 @@
 - [Linked List Zip](./day8-linked-list-zip/README.md)
 - [Pseudo Queue](./day11-pseudo-queue/README.md)
 - [Animal Shelters](./day12-animal-shelter/README.md)
+- [Tree Max](./day16-tree-max/README.md)
