@@ -328,8 +328,9 @@ namespace DataStructuresTests
       queue.Enqueue(1);
       queue.Enqueue(2);
       queue.Enqueue(3);
+      Node<int> node = queue.Dequeue();
 
-      Assert.Equal(1, queue.Dequeue());
+      Assert.Equal(1, node.Value);
       Assert.Equal(2, queue.Front.Value);
       Assert.Equal(3, queue.Back.Value);
     }

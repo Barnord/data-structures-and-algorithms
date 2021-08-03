@@ -30,7 +30,7 @@ namespace DataStructures
       Back = node;
     }
 
-    public T Dequeue()
+    public Node<T> Dequeue()
     {
       if (Front == null)
       {
@@ -39,7 +39,7 @@ namespace DataStructures
       Node<T> node = Front;
       Front = Front.Next;
 
-      return node.Value;
+      return node;
     }
 
     public T Peek()

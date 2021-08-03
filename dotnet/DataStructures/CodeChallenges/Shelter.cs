@@ -29,13 +29,13 @@ namespace CodeChallenges
     {
       if (pref.ToLower() == "cat")
       {
-        Critter critter = CatQ.Dequeue();
-        return $"You adopted a new cat, named {critter.Name}.";
+        Node<Critter> critter = CatQ.Dequeue();
+        return $"You adopted a new cat, named {critter.Value.Name}.";
       }
       if (pref.ToLower() == "dog")
       {
-        Critter critter = DogQ.Dequeue();
-        return $"You adopted a new dog, named {critter.Name}.";
+        Node<Critter> critter = DogQ.Dequeue();
+        return $"You adopted a new dog, named {critter.Value.Name}.";
       }
       else
       {

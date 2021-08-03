@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
-  public class BinaryTree<T>
+  public class BinaryTree<T> where T : IComparable
   {
     public Node<T> Root { get; set; }
 
@@ -53,7 +53,7 @@ namespace DataStructures
       return values;
     }
 
-    public static List<int> LevelOrderTraversal(BinarySearchTree<int> tree)
+    public static List<int> LevelOrderTraversal(BinaryTree<int> tree)
     {
       List<int> values = new List<int>();
       Queue<Node<int>> nodes = new Queue<Node<int>>();
@@ -62,8 +62,8 @@ namespace DataStructures
 
       while(nodes.Peek() != null)
       {
-        Node<int> node = nodes.Dequeue();
-        Node<int> currentNode = node;
+        Node<Node<int>> node = nodes.Dequeue();
+        Node<int> currentNode = node.Value;
 
         values.Add(currentNode.Value);
 
@@ -78,6 +78,32 @@ namespace DataStructures
       }
 
       return values;
+    }
+
+    public T Max()
+    {
+      T largest = Root.Value;
+      Queue<Node<T>> q = new Queue<Node<T>>();
+      q.Enqueue(Root);
+
+      while (!q.IsEmpty())
+      {
+        Node<Node<T>> node = q.Dequeue();
+        Node<T> current = node.Value;
+        if (current.Value.CompareTo(largest) > 0)
+        {
+          largest = current.Value;
+        }
+        if (current.Left != null)
+        {
+          q.Enqueue(current.Left);
+        }
+        if (current.Right != null)
+        {
+          q.Enqueue(current.Right);
+        }
+      }
+      return largest;
     }
   }
 }
