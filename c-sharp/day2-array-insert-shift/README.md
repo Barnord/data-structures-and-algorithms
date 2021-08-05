@@ -1,3 +1,3 @@
-![](array-instert.jpg)
+![](array-insert.png)
 
 [<==Back](../README.md)

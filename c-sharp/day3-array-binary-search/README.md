@@ -1,3 +1,3 @@
-![](array-binary-search.png)
+![](array-binary-search.PNG)
 
 [<==Back](../README.md)
