@@ -11,3 +11,4 @@
 - [Animal Shelters](./day12-animal-shelter/README.md)
 - [Tree Max](./day16-tree-max/README.md)
 - [Tree Breadth First](./day17-tree-breadth-first/README.md)
+- [Tree Fizz Buzz](./day18-k-ary-fizbuzz/README.md)
