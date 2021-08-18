@@ -13,3 +13,4 @@
 - [Tree Breadth First](./day17-tree-breadth-first/README.md)
 - [Tree Fizz Buzz](./day18-k-ary-fizbuzz/README.md)
 - [Insertion Sort Blog](./day26-insertion-sort-blog/README.md)
+- [Merge Sort Blog](./day27-merge-sort-blog/README.md)
