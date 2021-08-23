@@ -15,3 +15,4 @@
 - [Insertion Sort Blog](./day26-insertion-sort-blog/README.md)
 - [Merge Sort Blog](./day27-merge-sort-blog/README.md)
 - [Quick Sort Blog](./day28-quick-sort-blog/README.md)
+- [HashMaps](./day30-HashMaps/README.md)
