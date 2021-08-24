@@ -16,3 +16,4 @@
 - [Merge Sort Blog](./day27-merge-sort-blog/README.md)
 - [Quick Sort Blog](./day28-quick-sort-blog/README.md)
 - [HashMaps](./day30-HashMaps/README.md)
+- [Repeated Word](./day31-hash-table-repeated-word/README.md)
