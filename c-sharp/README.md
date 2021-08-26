@@ -18,3 +18,4 @@
 - [HashMaps](./day30-HashMaps/README.md)
 - [Repeated Word](./day31-hash-table-repeated-word/README.md)
 - [Tree Intersection](./day32-tree-intersection/README.md)
+- [Left Join](./day33-left-join/README.md)
