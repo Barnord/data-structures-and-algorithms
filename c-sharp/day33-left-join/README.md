@@ -7,10 +7,10 @@ Make a method that takes two inputted HashMaps, and returns a structure where ke
 
 ## Approach & Efficiency
 
-First we check the first Table for all its keys, then we check the second map for all the keys in there. Really we coded this as a class and it got away from us and we went down a path few of us thought through, so I'll revisit this tomorrow.
+First we check the first Table for all its keys, then we check the second map for all the keys in there. The Big O for both time and space is O(n).
 
 ## Solution
 
-Why explain what doesn't work?
+First we iterate through one HashTable, adding all of it's values to a list as an array. We check the key of this first HashTable, to check if it's in the second HashTable. If the second HashTable contains the key we're searching for, we extend the array, and add the value from the second HashTable. We then return the list.
 
 [<==Back](../README.md)

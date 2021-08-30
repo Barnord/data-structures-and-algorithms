@@ -8,7 +8,7 @@ namespace DataStructures
 {
   public class HashMap
   {
-    private LinkedList<KeyValuePair<string, string>>[] Map { get; set; }
+    public LinkedList<KeyValuePair<string, string>>[] Map { get; set; }
     public HashMap(int size)
     {
       Map = new LinkedList<KeyValuePair<string, string>>[size];
