@@ -92,22 +92,13 @@ namespace DataStructuresTests
     }
 
     [Fact]
-    public void GSingleNodeAndEdgeGraph()
+    public void GEmptyGraph()
     {
       Graph<int> graph = new();
 
-      Vertex<int> node = graph.AddNode(4);
-      Vertex<int> noode = graph.AddNode(5);
+      List<Vertex<int>> values = new();
 
-      graph.AddEdge(node, noode, 6);
-
-      Assert.Equal();
-    }
-
-    [Fact]
-    public void HEmptyGraph()
-    {
-
+      Assert.Equal(values, graph.GetNodes());
     }
   }
 }
