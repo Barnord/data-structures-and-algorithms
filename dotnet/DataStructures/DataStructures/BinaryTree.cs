@@ -10,7 +10,7 @@ namespace DataStructures
   {
     public Node<T> Root { get; set; }
 
-    public static List<T> PreOrderTraversal(Node<T> node, List<T> values)
+    public List<T> PreOrderTraversal(Node<T> node, List<T> values)
     {
       values.Add(node.Value);
       if (node.Left != null)
@@ -24,11 +24,11 @@ namespace DataStructures
       return values;
     }
 
-    public static List<T> InOrderTraversal(Node<T> node, List<T> values)
+    public List<T> InOrderTraversal(Node<T> node, List<T> values)
     {
       if (node.Left != null)
       {
-        InOrderTraversal(node.Right, values);
+        InOrderTraversal(node.Left, values);
       }
       values.Add(node.Value);
       if (node.Right != null)
@@ -38,7 +38,7 @@ namespace DataStructures
       return values;
     }
 
-    public static List<T> PostOrderTraversal(Node<T> node, List<T> values)
+    public List<T> PostOrderTraversal(Node<T> node, List<T> values)
     {
       if (node.Left != null)
       {

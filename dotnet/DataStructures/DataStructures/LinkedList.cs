@@ -44,6 +44,37 @@ namespace DataStructures
       current.Next = node;
     }
 
+    public bool Includes(T value)
+    {
+      Node<T> current = Head;
+
+      while (current != null)
+      {
+        if (current.Value.Equals(value))
+        {
+          return true;
+        }
+        current = current.Next;
+      }
+
+      return false;
+    }
+
+    public string ToString()
+    {
+      Node<T> current = Head;
+
+      string answer = "";
+
+      while (current != null)
+      {
+        answer += $"{{{current.Value.ToString()}}} -> ";
+        current = current.Next;
+      }
+
+      return answer + "NULL";
+    }
+
     public void InsertBefore(T value, int before)
     {
       Node<T> node = new Node<T>(value);
